@@ -3,6 +3,10 @@ import Image from "next/image";
 import Container from "./Container";
 import useAnimateOnScroll, { applyAnimationClass } from "../hooks/useAnimateScroll";
 
+interface IntroductionProps {
+  speed: number;
+}
+
 const PersonalUrl = () => {
   interface UrlType {
     url: string;
@@ -45,7 +49,7 @@ const PersonalUrl = () => {
   );
 }
 
-const Introduction = () => {
+const Introduction = ({speed}: IntroductionProps) => {
   const sectionAnimationId = "introduction-section";
   const isSectionVisible = useAnimateOnScroll(sectionAnimationId);
 
@@ -54,15 +58,15 @@ const Introduction = () => {
       <Container>
         <div className="text-center flex flex-col mb-10 items-center lg:text-left lg:flex-row lg:mb-8">
           <div className={`order-2 lg:order-1 lg:w-[75%] lg:pr-10 lg:mr-20 ${applyAnimationClass(isSectionVisible, 'animate__fadeInLeft')}`}>
-            <h1 className="text-4xl mb-10 leading-normal">
+            <h1 className="mb-10 leading-normal">
               Hello, I&apos;m <span className="text-secondary">M. Yudi chang,</span> <br/> a Frontend / Fullstack Developer
             </h1>
 
-            <h3 className="text-2xl mb-7">
+            <h3 className="mb-7">
               With over <span className="text-secondary">9+ years</span> of experience, I specialize in building fast, responsive web applications. I have also spent <span className="text-secondary">the last 3 years</span> transitioning to Fullstack development, focusing on fintech products.
             </h3>
 
-            <h3 className="text-2xl">
+            <h3>
               I&apos;m always eager to learn new things and consider myself a fast learner.
             </h3>
           </div>
