@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Container from "./Container";
-import useAnimateOnScroll from "../hooks/useAnimateScroll";
+import useAnimateOnScroll, { applyAnimationClass } from "../hooks/useAnimateScroll";
 
 const PersonalUrl = () => {
   interface UrlType {
@@ -46,18 +46,14 @@ const PersonalUrl = () => {
 }
 
 const Introduction = () => {
-  const sectionAnimationClass = "introduction-section";
-  const isSectionVisible = useAnimateOnScroll(sectionAnimationClass);
-
-  const animationClass = (inAnimation: string) => {
-    return `relative opacity-0 transition-opacity duration-1000 animate__animated ${isSectionVisible ? inAnimation : ''}`
-  }
+  const sectionAnimationId = "introduction-section";
+  const isSectionVisible = useAnimateOnScroll(sectionAnimationId);
 
   return (
-    <section className="py-40" id={sectionAnimationClass}>
+    <section className="py-40" id={sectionAnimationId}>
       <Container>
         <div className="text-center flex flex-col mb-10 items-center lg:text-left lg:flex-row lg:mb-8">
-          <div className={`order-2 lg:order-1 lg:w-[75%] lg:pr-10 lg:mr-20 ${animationClass('animate__fadeInLeft')}`}>
+          <div className={`order-2 lg:order-1 lg:w-[75%] lg:pr-10 lg:mr-20 ${applyAnimationClass(isSectionVisible, 'animate__fadeInLeft')}`}>
             <h1 className="text-4xl mb-10 leading-normal">
               Hello, I&apos;m <span className="text-secondary">M. Yudi chang,</span> <br/> a Frontend / Fullstack Developer
             </h1>
@@ -70,7 +66,7 @@ const Introduction = () => {
               I&apos;m always eager to learn new things and consider myself a fast learner.
             </h3>
           </div>
-          <div className={`order-1 mb-10 lg:m-0 lg:order-2 ${animationClass('animate__fadeInRight')}`}>
+          <div className={`order-1 mb-10 lg:m-0 lg:order-2 ${applyAnimationClass(isSectionVisible, 'animate__fadeInRight')}`}>
             <div className="pr-3 pb-3 w-[300px] overflow-hidden rotate-6 border-b-4 border-r-4 border-secondary">
               <Image
                 src="/images/profile-picture.png"
@@ -85,7 +81,7 @@ const Introduction = () => {
             </div>
           </div>
         </div>
-        <div  className={`text-center lg:text-left ${animationClass('animate__fadeInLeft')}`}>
+        <div  className={`text-center lg:text-left ${applyAnimationClass(isSectionVisible, 'animate__fadeInLeft')}`}>
           <PersonalUrl />
         </div>
       </Container>

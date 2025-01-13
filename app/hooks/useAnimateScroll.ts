@@ -30,4 +30,10 @@ const useAnimateOnScroll = (animationClass: string): boolean => {
   return isVisible;
 };
 
+const initialClass: string = "relative opacity-0 transition-opacity duration-1000 animate__animated";
+
+export const applyAnimationClass = (isVisible: boolean, inAnimation: string) => {
+  return `${initialClass} ${isVisible ? inAnimation : ''}`
+}
+
 export default useAnimateOnScroll;
