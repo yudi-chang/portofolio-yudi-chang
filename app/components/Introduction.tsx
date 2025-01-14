@@ -50,7 +50,7 @@ const Introduction = () => {
   const isSectionVisible = useAnimateOnScroll(sectionAnimationId);
 
   return (
-    <section className="py-40" id={sectionAnimationId}>
+    <section className="py-20 lg:py-40" id={sectionAnimationId}>
       <Container>
         <div className="text-center flex flex-col mb-10 items-center lg:text-left lg:flex-row lg:mb-8">
           <div className={`order-2 lg:order-1 lg:w-[75%] lg:pr-10 lg:mr-20 ${applyAnimationClass(isSectionVisible, 'animate__fadeInLeft')}`}>
@@ -67,7 +67,7 @@ const Introduction = () => {
             </h3>
           </div>
           <div className={`order-1 mb-10 lg:m-0 lg:order-2 ${applyAnimationClass(isSectionVisible, 'animate__fadeInRight')}`}>
-            <div className="pr-3 pb-3 w-[300px] overflow-hidden rotate-6 border-b-4 border-r-4 border-secondary">
+            <div className="pr-3 pb-3 w-[300px] overflow-hidden lg:rotate-6 border-b-4 border-r-4 border-secondary">
               <Image
                 src="/images/profile-picture.png"
                 alt="Yudi Chang"
