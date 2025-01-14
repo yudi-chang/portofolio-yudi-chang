@@ -23,7 +23,7 @@ const PersonalUrl = () => {
       icon: "fa-regular fa-envelope"
     },
     {
-      url: "https://wa.me/6281234567890",
+      url: "https://wa.me/6289686211228",
       icon: "fab fa-whatsapp"
     }
   ]
