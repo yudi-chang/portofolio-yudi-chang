@@ -1,0 +1,26 @@
+.timelineBox {
+  @apply relative;
+
+  &::before {
+    @apply content-[''] absolute top-0 w-[30px] h-[30px] rounded-full;
+    background-color: var(--primary-color);
+    left: -20px;
+  }
+
+  &:nth-child(odd) {
+    
+    &::before {
+      @apply left-auto;
+      right: -11px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+
+    &:nth-child(odd) {
+      &::before {
+        left: -20px;
+      }
+    }
+  }
+}

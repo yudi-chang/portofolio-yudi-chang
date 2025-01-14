@@ -4,7 +4,7 @@ import useAnimateOnScroll, { applyAnimationClass } from "../hooks/useAnimateScro
 
 const Illustration = () => {
   return (
-    <div className="w-[300px] h-[600px] relative">
+    <div className="hidden lg:block w-[300px] h-[600px] relative">
       <Parallax
         translateX={['-100px', '0px']}
         className="absolute z-10 top-[20%] left-0"
@@ -144,24 +144,24 @@ export default function Skills() {
   return (
     <section className="bg-gradient-to-b from-[#121718] to-cyan-950" id={sectionAnimationId}>
       <Container>
-        <h1 className="text-center mb-20 font-bold">Skills</h1>
-        <div className="flex justify-between">
-          <div className={`${applyAnimationClass(isSectionVisible, 'animate__fadeInLeft')}`}>
+        <h1 className={`${applyAnimationClass(isSectionVisible, 'animate__fadeInUp')} text-center mb-10 md:mb-20 font-bold`}>Skills</h1>
+        <div className="flex-col flex sm:flex-row sm:justify-center gap-10 sm:gap-20 lg:justify-between">
+          <div className={`${applyAnimationClass(isSectionVisible, 'animate__fadeInLeft')} text-center order-2 lg:order-none lg:text-left`}>
             <h3 className="font-bold mb-5">
               <span className="text-secondary">[</span>
               Back_end
               <span className="text-secondary">]</span>
             </h3>
-            <SkillList skillList={backendSkills}/>
+            <SkillList skillList={backendSkills} flexJustify="justify-center lg:justify-start"/>
           </div>
           <Illustration />
-          <div className={`${applyAnimationClass(isSectionVisible, 'animate__fadeInRight')} text-right`}>
+          <div className={`${applyAnimationClass(isSectionVisible, 'animate__fadeInRight')} text-center order-1 lg:order-none lg:text-right`}>
             <h3 className="font-bold mb-5">
               <span className="text-secondary">&lt;</span>
               Front_end
               <span className="text-secondary">/&gt;</span>
             </h3>
-            <SkillList skillList={frontendSkills} flexJustify="justify-end"/>
+            <SkillList skillList={frontendSkills} flexJustify="justify-center lg:justify-end"/>
           </div>
         </div>
       </Container>
