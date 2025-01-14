@@ -3,10 +3,6 @@ import Image from "next/image";
 import Container from "./Container";
 import useAnimateOnScroll, { applyAnimationClass } from "../hooks/useAnimateScroll";
 
-interface IntroductionProps {
-  speed: number;
-}
-
 const PersonalUrl = () => {
   interface UrlType {
     url: string;
@@ -49,7 +45,7 @@ const PersonalUrl = () => {
   );
 }
 
-const Introduction = ({speed}: IntroductionProps) => {
+const Introduction = () => {
   const sectionAnimationId = "introduction-section";
   const isSectionVisible = useAnimateOnScroll(sectionAnimationId);
 

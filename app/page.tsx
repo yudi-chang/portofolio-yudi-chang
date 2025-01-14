@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div>
       <main>
-        <Introduction speed={-10}/>
+        <Introduction />
         <Skills />
       </main>
     </div>
