@@ -115,7 +115,7 @@ const Projects = () => {
   return (
     <section id={sectionAnimationId}>
       <Container>
-        <h1 className={`${applyAnimationClass(isSectionVisible, 'animate__fadeInUp')} text-right font-bold mb-16`}>Projects</h1>
+        <h1 className={`${applyAnimationClass(isSectionVisible, 'animate__fadeInUp')} text-right font-bold mb-16`}>Personal Projects Sample</h1>
         <div className={applyAnimationClass(isSectionVisible, 'animate__fadeInUp')}>
           <ProjectCard projects={projects}/>
         </div>
