@@ -13,6 +13,27 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Yudi Chang",
   description: "Yudi Chang's portofolio",
+  openGraph: {
+    title: "Yudi Chang",
+    description: "A showcase of my work and skills.",
+    url: "https://yudi-chang-portofolio.netlify.app/",
+    siteName: "Yudi Chang Portfolio",
+    images: [
+        {
+            url: "/preview.png",
+            width: 1200,
+            height: 630,
+            alt: "A preview of Yudi Chang's portfolio",
+        },
+    ],
+    type: "website",
+},
+twitter: {
+    card: "summary_large_image",
+    title: "Yudi Chang",
+    description: "A showcase of my work and skills.",
+    images: ["/preview.png"],
+},
 };
 
 export default function RootLayout({
