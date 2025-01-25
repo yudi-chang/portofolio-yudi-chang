@@ -108,6 +108,10 @@ export default function Skills() {
       icon: ""
     },
     {
+      name: "Angular",
+      icon: ""
+    },
+    {
       name: "Typsecript",
       icon: ""
     },
